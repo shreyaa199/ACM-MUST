@@ -1,0 +1,181 @@
+/* ================= GLOBAL ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --primary: #0b5ed7;
+    --secondary: #4fc3f7;
+    --dark: #033b6c;
+    --mint: #eafff6;
+    --white: #ffffff;
+    /* Instagram Gradient for the new section */
+    --insta-grad: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f5fbff; color: var(--dark); line-height: 1.6; }
+a { text-decoration: none; }
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 8%; background: white; position: sticky; top: 0; z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.nav-logo { width: 40px; }
+.nav-left { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { color: var(--dark); font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+.nav-btn, .logout-btn { 
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;
+  padding: 10px 24px; border-radius: 30px; font-weight: 500; border: none; cursor: pointer;
+}
+.logout-btn { background: #ff4d4d; }
+
+/* ================= HERO & DROPDOWN ================= */
+.hero { text-align: center; padding: 80px 20px; background: var(--mint); position: relative; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 30px; }
+
+.dropdown-wrapper { display: flex; justify-content: center; margin-bottom: 35px; }
+.custom-select { position: relative; width: 100%; max-width: 450px; z-index: 1500; }
+.select-header {
+  background: white; padding: 16px 30px; border-radius: 50px;
+  border: 2px solid var(--secondary); display: flex; justify-content: space-between;
+  align-items: center; font-weight: 500; box-shadow: 0 5px 15px rgba(0,0,0,0.05); cursor: pointer;
+}
+.select-options {
+  position: absolute; top: 110%; left: 0; right: 0; background: white;
+  border-radius: 20px; display: none; box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  text-align: left; overflow: hidden;
+}
+.custom-select.active .select-options { display: block; }
+.option { padding: 15px 25px; border-bottom: 1px solid #f0f0f0; transition: 0.2s; cursor: pointer; }
+.option:hover { background: #f0f9ff; color: var(--primary); padding-left: 30px; }
+
+.arrow { color: var(--primary); transition: 0.3s; }
+.custom-select.active .arrow { transform: rotate(180deg); }
+
+.hero-tags span { background: white; padding: 8px 18px; border-radius: 20px; margin: 5px; display: inline-block; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.count-box { margin-top: 40px; display: inline-block; background: rgba(11, 94, 215, 0.1); padding: 12px 30px; border-radius: 40px; font-weight: 600; color: var(--primary); }
+
+/* ================= MODERN LOGIN MODAL ================= */
+.modal-overlay {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px);
+  z-index: 3000; justify-content: center; align-items: center; padding: 20px;
+}
+.modal-content {
+  background: white; padding: 40px; border-radius: 30px; width: 90%; max-width: 400px;
+  text-align: center; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  animation: slideUp 0.4s ease-out;
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; }
+
+.login-form-container { margin-top: 20px; }
+.input-field input {
+  width: 100%; padding: 14px 20px; margin-bottom: 15px;
+  border: 1px solid #ddd; border-radius: 12px; font-family: inherit; outline: none;
+}
+.input-field input:focus { border-color: var(--primary); }
+.error-msg { color: #ff4d4d; font-size: 14px; margin-top: 10px; }
+
+/* ================= DASHBOARD STYLES ================= */
+.dashboard-hero { padding: 60px 8%; background: #f0f9ff; }
+.welcome-container { margin-bottom: 40px; }
+.highlight-text { color: var(--primary); }
+
+.member-info-card {
+  background: white; display: flex; gap: 30px; padding: 20px 40px;
+  border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin: 30px auto; width: fit-content; align-items: center;
+}
+.info-item { text-align: left; }
+.label { display: block; font-size: 11px; font-weight: 700; color: #888; letter-spacing: 1px; }
+.value { font-size: 18px; font-weight: 600; color: var(--dark); }
+.info-divider { width: 1px; height: 40px; background: #eee; }
+
+.dashboard-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; padding: 20px 0;
+}
+.dash-card {
+  background: white; padding: 30px; border-radius: 25px; display: flex;
+  align-items: center; gap: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  transition: 0.3s; cursor: pointer; position: relative;
+}
+.dash-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(11, 94, 215, 0.1); }
+.dash-icon-bg {
+  width: 60px; height: 60px; background: var(--mint);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; border-radius: 18px;
+}
+.card-text h3 { font-size: 18px; margin-bottom: 5px; }
+.card-text p { font-size: 13px; color: #666; line-height: 1.4; }
+.arrow-link { margin-left: auto; font-weight: bold; color: var(--primary); }
+
+/* ================= EXACT IMAGE MATCHED SPACING ================= */
+.join, .team { padding: 60px 8%; text-align: center; background: white; }
+.team { background: #f5fbff; }
+
+/* Compact spacing between heading and para */
+.join h2, .team h2 { 
+  font-size: 1.5rem; 
+  margin-bottom: 15px; 
+  font-weight: 800; 
+}
+
+/* Balanced para spacing */
+.join p { 
+  margin-bottom: 28px; 
+  font-size: 1rem;
+}
+
+.team-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 25px; }
+.team-main-img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+
+/* Perfectly balanced button */
+.cta-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;
+  padding: 14px 40px; border-radius: 50px; font-weight: 600; 
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: 0.3s; box-shadow: 0 10px 20px rgba(11, 94, 215, 0.2); border: none; cursor: pointer;
+  font-size: 1rem;
+}
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+/* ================= UPDATED CONTACT SECTION ================= */
+.instagram { 
+    padding: 60px 20px; 
+    text-align: center; 
+    background: var(--insta-grad); 
+    color: white; 
+}
+.insta-text { margin: 8px 0 28px; opacity: 0.9; font-size: 1rem; }
+.contact-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 1000px; margin: 0 auto; }
+.contact-link { background: rgba(255, 255, 255, 0.95); color: #cc2366; padding: 12px 25px; border-radius: 50px; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+.contact-link:hover { transform: scale(1.05); background: #ffffff; }
+
+/* ================= FOOTER ================= */
+.footer { padding: 25px; text-align: center; background: var(--dark); color: white; }
+
+/* ================= MEMBERSHIP CARD ================= */
+.membership-card {
+  width: 380px; height: 220px; background: linear-gradient(135deg, var(--dark), var(--primary));
+  border-radius: 20px; padding: 25px; color: white; position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2); margin: 40px auto;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 1.8rem; }
+  .member-info-card { flex-direction: column; gap: 15px; padding: 20px; }
+  .info-divider { width: 80%; height: 1px; }
+  .contact-link { width: 100%; justify-content: center; }
+}
+
+

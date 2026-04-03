@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | ACM-W SET MUST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0b5ed7;
+      --secondary: #4fc3f7;
+      --dark: #033b6c;
+      --white: #ffffff;
+      --bg: #f8fbff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--dark); overflow-x: hidden; }
+
+    .team-header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .team-header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; }
+    .team-header p { opacity: 0.9; font-size: 1.1rem; font-weight: 300; }
+    
+    .back-btn {
+      display: inline-block; margin-top: 20px; color: var(--secondary);
+      text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      border: 2px solid var(--secondary); padding: 8px 25px; border-radius: 50px;
+      transition: 0.3s;
+    }
+    .back-btn:hover { background: var(--secondary); color: var(--dark); }
+
+    .team-container {
+      max-width: 1200px;
+      margin: 50px auto 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 25px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: 0.4s;
+      border: 1px solid rgba(0,0,0,0.03);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .team-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(11, 94, 215, 0.15); }
+
+    .image-wrapper {
+      width: 100%;
+      height: 320px;
+      background: #eef2f7; 
+      overflow: hidden;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .team-card:hover img { transform: scale(1.05); }
+
+    .info { padding: 20px; }
+    .role { 
+      font-size: 0.75rem; 
+      color: var(--primary); 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+      background: rgba(11, 94, 215, 0.07);
+      padding: 5px 15px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .name { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 15px; }
+
+    .social-btn {
+      display: block;
+      padding: 10px;
+      background: #fdfdfd;
+      color: #e4405f;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: 0.3s;
+      border: 1px solid #eee;
+    }
+    .social-btn:hover { background: #e4405f; color: white; }
+
+    @keyframes fadeInUp { 
+      from { opacity: 0; transform: translateY(30px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+
+    @media (max-width: 768px) {
+      .team-header h1 { font-size: 2.2rem; }
+      .team-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="team-header">
+  <h1>Meet Our Leaders</h1>
+  <p>Dedicated minds shaping the future of technology at SET MUST</p>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+</section>
+
+<div class="team-container" id="teamGrid"></div>
+
+<script>
+  const members = [
+    { name: "Mr. Pravesh Kumar Bishnoi", role: "Faculty Mentor", img: "faculty_mentor.png", insta: "https://www.instagram.com/p/DTAGi0xkWJI/" },
+    { name: "Siya Thakur", role: "Chairperson", img: "chairperson.png", insta: "https://www.instagram.com/p/DTAGgBMACBE/" },
+    { name: "Teena Arora", role: "Vice Chairperson", img: "vicechair.png", insta: "https://www.instagram.com/p/DTAGpSdkatZ/" },
+    { name: "Aditi Garg", role: "Secretary", img: "secretary.png", insta: "https://www.instagram.com/p/DTAG1TTkVMK/" },
+    { name: "Surbhi Kanwar", role: "Treasurer", img: "treasurer.png", insta: "https://www.instagram.com/p/DTAGVS9AA4v/" },
+    { name: "Mahak Yadav", role: "Membership Chair", img: "membershipchair.png", insta: "https://www.instagram.com/p/DTAGPpPAHkJ/" },
+    { name: "Shreya", role: "Web Master", img: "webmaster.png", insta: "https://www.instagram.com/p/DTAG57mEX7h/" },
+    { name: "Khushi Battu", role: "AI/ML Lead", img: "ai_lead.png", insta: "https://www.instagram.com/p/DTAGvvCEcEJ/" },
+    { name: "Diksha Tanwar", role: "Membership Lead", img: "membership_lead.png", insta: "https://www.instagram.com/p/DTAGL4agFAd/" },
+    { name: "Mahak Yadav", role: "Social Media Lead", img: "socialmedia_lead.png", insta: "https://www.instagram.com/p/DTAHJc6EbIN/" },
+    { name: "Khushi Jangir", role: "Content Lead", img: "content_lead.png", insta: "https://www.instagram.com/p/DTAF_2DAPJX/" },
+    { name: "Rimpi Dahiya", role: "PR & Marketing Lead", img: "PR_lead.png", insta: "https://www.instagram.com/p/DTAFlwHgK4I/" },
+    { name: "Rishika Katiyar", role: "Design Head", img: "design.png", insta: "https://www.instagram.com/p/DTAGajWgAjl/" },
+    { name: "Gunjan Saini", role: "Event Head", img: "event_head1.png", insta: "https://www.instagram.com/p/DTAG-BMEbVd/" },
+    { name: "Nupur Jain", role: "Event Head", img: "event_head2.png", insta: "https://www.instagram.com/p/DTAF2vfAEwr/" },
+    { name: "Padma Tiwari", role: "Content Co-Lead", img: "content_colead.png", insta: "https://www.instagram.com/p/DTAF8jXAGRB/" },
+    { name: "Gunjan Kumawat", role: "PR & Marketing Co-Lead", img: "PR_colead.png", insta: "https://www.instagram.com/p/DTAFhRhAEdi/" },
+    { name: "Manasvi Ranawat", role: "Social Media Co-Lead", img: "media_colead.png", insta: "https://www.instagram.com/p/DTAHF3AkUR_/" },
+  ];
+
+  const grid = document.getElementById('teamGrid');
+
+  members.forEach((m, i) => {
+    const fallbackImg = `https://ui-avatars.com/api/?name=${m.name.replace(' ', '+')}&background=0b5ed7&color=fff&size=400`;
+    
+    grid.innerHTML += `
+      <div class="team-card" style="animation-delay: ${i * 0.05}s;">
+        <div class="image-wrapper">
+          <img src="${m.img}" alt="${m.name}" onerror="this.src='${fallbackImg}'">
+        </div>
+        <div class="info">
+          <span class="role">${m.role}</span>
+          <h3 class="name">${m.name}</h3>
+          <a href="${m.insta}" target="_blank" class="social-btn">Instagram Profile</a>
+        </div>
+      </div>
+    `;
+  });
+</script>
+
+<footer style="text-align: center; padding: 40px; color: #888; font-size: 0.9rem;">
+  © 2025 ACM-W SET MUST. Designed with ❤️ for the community.
+</footer>
+
+</body>
+</html>

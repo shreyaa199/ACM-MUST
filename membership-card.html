@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACM-W Membership Card Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f4f7f6; margin: 0; color: #333; }
+        
+        nav {
+            padding: 10px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-title { 
+            font-size: 22px; 
+            font-weight: 700; 
+            color: #1a237e; 
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px; 
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(26, 35, 126, 0.2);
+        }
+
+        .back-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 15px rgba(26, 35, 126, 0.3); }
+
+        .card-container { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 35px; 
+            padding: 60px 0; 
+        }
+
+        .id-card {
+            width: 450px; 
+            height: 285px; 
+            border-radius: 18px;
+            position: relative;
+            color: white;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            background-size: 100% 100%; 
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        #cardFront { background-image: url('front.png'); }
+        #cardBack { background-image: url('back.png'); }
+
+        .card-text { position: absolute; pointer-events: none; }
+
+        /* Styling for the Name on Front */
+        #cardName {
+            bottom: 60px; 
+            right: 40px;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: right;
+            width: 85%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+            opacity:0.8;
+        }
+
+        /* Styling for ID on Front */
+        #cardMemberId {
+            bottom: 34px; 
+            right: 38px;
+            font-size: 13px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+            opacity:0.8;
+        }
+
+        /* Styling for ID on Back */
+        #cardMemberIdBack {
+            top: 27px;
+            left: 132px; 
+            font-size: 13px;
+            font-weight: 600;
+            opacity:0.8;
+        }
+
+        /* Styling for Name on Back */
+        #cardNameBack {
+            top: 65px; 
+            left: 20px;
+            font-size: 23px;
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity:0.8;
+        }
+
+        .download-section { text-align: center; margin-bottom: 80px; }
+        .download-btn {
+            background: #1a237e;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 10px 20px rgba(26,35,126,0.3);
+            transition: 0.3s;
+        }
+        .download-btn:disabled { background: #666; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <img src="logo.png" alt="Logo" class="nav-logo">
+            <div class="nav-title">Membership Card Portal</div>
+        </div>
+        <a href="home.html" class="back-btn">Back to Dashboard</a>
+    </nav>
+
+    <div class="card-container" id="cardSheet">
+        <div class="id-card" id="cardFront">
+            <div id="cardName" class="card-text">Loading...</div>
+            <div class="card-text" style="bottom: 32px; right: 110px; font-size: 13px;"></div>
+            <div id="cardMemberId" class="card-text">ACM-W-0000</div>
+        </div>
+
+        <div class="id-card" id="cardBack">
+            <div id="cardMemberIdBack" class="card-text">ACM-W-0000</div>
+            <div id="cardNameBack" class="card-text">Loading...</div>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <button onclick="downloadCardPDF()" class="download-btn">
+            📥 Download Membership Card (HD PDF)
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

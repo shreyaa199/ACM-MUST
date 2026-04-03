@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Recognition | ACM-W SET MUST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f59e0b; /* Golden Yellow */
+            --secondary: #fb923c; /* Orange */
+            --dark: #0f172a;
+            --bg: #fffdfa;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navbar: Left Logo, Right Back Button */
+        .navbar {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 12px; }
+        .nav-left img { width: 45px; }
+        .nav-left span { font-weight: 800; font-size: 1.1rem; color: var(--dark); }
+
+        .back-home {
+            background: var(--dark);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .back-home:hover { background: var(--primary); transform: translateX(-5px); color: var(--dark); }
+
+        /* Main Content */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header h1 { font-size: 2.8rem; margin-bottom: 10px; color: var(--dark); }
+        .page-header p { color: #4b5563; font-size: 1.2rem; max-width: 750px; margin: 0 auto; }
+
+        /* Content Blocks */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+        .info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(245, 158, 11, 0.1);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.05);
+        }
+
+        .info-card h2 { font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .info-card.scholarships h2 { color: var(--primary); }
+        .info-card.recognition h2 { color: var(--secondary); }
+
+        .info-card p { color: #475569; margin-bottom: 20px; font-weight: 500; }
+
+        .list-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        .list-item::before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Banner Section */
+        .glory-banner {
+            margin-top: 50px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            border-radius: 24px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .glory-item h3 { font-size: 1.5rem; margin: 0; }
+        .glory-item span { font-size: 0.85rem; opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .glory-banner { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="logo.png" alt="ACM-W Logo">
+            <span>ACM-W SET MUST</span>
+        </div>
+        <a href="index.html" class="back-home">Back to Home</a>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Events & Global Recognition</h1>
+            <p>Celebrate excellence and unlock opportunities to represent ACM-W on international platforms.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="info-card scholarships">
+                <h2>🌍 Global Scholarships</h2>
+                <p>Financial support and travel grants for deserving women in computing.</p>
+                
+                <div class="list-item"><strong>GHC Scholarship:</strong> Opportunity to attend the Grace Hopper Celebration, the world's largest gathering of women technologists.</div>
+                <div class="list-item"><strong>ACM-W Travel Grants:</strong> Funding for student members to present their research at ACM conferences globally.</div>
+                <div class="list-item"><strong>Rising Star Awards:</strong> Recognition for students who show exceptional potential in technical leadership.</div>
+                <div class="list-item"><strong>External Grants:</strong> Guidance on applying for tech scholarships from Google, Adobe, and Palantir.</div>
+            </div>
+
+            <div class="info-card recognition">
+                <h2>✨ Chapter Recognition</h2>
+                <p>Showcase your talent through local competitions and member spotlights.</p>
+
+                <div class="list-item"><strong>Annual Tech Awards:</strong> Honoring the 'Most Active Member' and 'Technical Innovator' of the year.</div>
+                <div class="list-item"><strong>Hack-W-Thon:</strong> Women-centric hackathons to solve real-world problems through code.</div>
+                <div class="list-item"><strong>Member Spotlight:</strong> Monthly features on our official social media handles for outstanding achievers.</div>
+                <div class="list-item"><strong>Speaker Series:</strong> Certificates of appreciation for students leading peer-learning workshops.</div>
+            </div>
+        </div>
+
+        <div class="glory-banner">
+            <div class="glory-item">
+                <h3>Global Stage</h3>
+                <span>International Grants</span>
+            </div>
+            <div class="glory-item">
+                <h3>Prestigious Awards</h3>
+                <span>Merit Recognition</span>
+            </div>
+            <div class="glory-item">
+                <h3>Leadership</h3>
+                <span>Growth & Exposure</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

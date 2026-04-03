@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Kit | ACM-W</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin()">
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="logo.png" class="nav-logo" alt="Logo">
+        <span>Registration Kit</span>
+    </div>
+    <button onclick="location.href='home.html'" class="nav-btn">Back</button>
+</nav>
+
+<section class="dashboard-hero">
+    <div class="welcome-container" style="text-align: center;">
+        <h1>🌸 Welcome to the <span class="highlight-text">Chapter</span></h1>
+        <p class="hero-subtitle">Everything you need to know as a new member.</p>
+    </div>
+
+    <div class="registration-container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
+        
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="dash-icon-bg">✉️</div>
+                <h3>Welcome Letter</h3>
+            </div>
+            <div class="card-text" style="margin-top: 15px;">
+                <p>Welcome to the <b>ACM-W Student Chapter, Mody University</b>! We are delighted to have you join a community that believes in empowering women in computing, fostering innovation, and building strong technical leadership.</p>
+                <p style="margin-top: 10px;"><b>ACM-W is not just a chapter</b>—it’s a space to learn, grow, collaborate, and lead with confidence. Let’s create impact, together 🚀</p>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--primary);">Warm regards, <br>Team ACM-W, Mody University</p>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            
+            <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="dash-icon-bg">🤝</div>
+                    <h3>Code of Conduct</h3>
+                </div>
+                <ul style="margin-top: 15px; list-style: none; color: #666; font-size: 14px;">
+                    <li style="margin-bottom: 8px;">✅ Respectful & inclusive environment</li>
+                    <li style="margin-bottom: 8px;">✅ Treat everyone with dignity</li>
+                    <li style="margin-bottom: 8px;">✅ Encourage diversity of thoughts</li>
+                    <li style="margin-bottom: 8px;">✅ Zero tolerance for harassment</li>
+                    <li>✅ Integrity in all activities</li>
+                </ul>
+            </div>
+
+            <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="dash-icon-bg">📅</div>
+                    <h3>Event Guidelines</h3>
+                </div>
+                <ul style="margin-top: 15px; list-style: none; color: #666; font-size: 14px;">
+                    <li style="margin-bottom: 8px;">📍 Prior registration is mandatory</li>
+                    <li style="margin-bottom: 8px;">📍 Be punctual for all sessions</li>
+                    <li style="margin-bottom: 8px;">📍 Certificates based on engagement</li>
+                    <li style="margin-bottom: 8px;">📍 Follow specific event rules</li>
+                    <li>📍 Active participation is encouraged</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="dash-icon-bg">📢</div>
+                <h3>Communication Channels</h3>
+            </div>
+            <div class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); width: 100%; padding: 0; margin-top: 20px;">
+                <div class="info-item">
+                    <span class="label">WHATSAPP</span>
+                    <span class="value" style="font-size: 14px;">Daily Updates</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">EMAIL</span>
+                    <span class="value" style="font-size: 14px;">Formal Invites</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">INSTAGRAM</span>
+                    <span class="value" style="font-size: 14px;">Highlights</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2025 ACM-W Student Chapter | SET MUST</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

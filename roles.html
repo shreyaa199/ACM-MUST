@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles & Responsibilities | ACM-W</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin()">
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="logo.png" class="nav-logo" alt="Logo">
+        <span>Roles & Responsibilities</span>
+    </div>
+    <button onclick="location.href='home.html'" class="nav-btn">Back</button>
+</nav>
+
+<section class="dashboard-hero">
+    <div class="welcome-container" style="text-align: center;">
+        <h1>🧭 Your <span class="highlight-text">Impact</span></h1>
+        <p class="hero-subtitle">Every member plays a vital role in our collective success.</p>
+    </div>
+
+    <div class="dashboard-grid" style="max-width: 1000px; margin: 0 auto;">
+        
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">👩‍💻</div>
+            <h3>General Member</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Participate in workshops, contribute ideas in meetings, and represent the chapter in university events.</p>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">👑</div>
+            <h3>Leadership</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Lead sub-committees, mentor juniors, and help in strategic planning for the chapter's growth.</p>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">🤝</div>
+            <h3>Event Volunteer</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Assist in organizing hackathons, speaker sessions, and maintaining discipline during on-campus activities.</p>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">🎨</div>
+            <h3>Creative & Tech</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Manage social media, design posters, or maintain the chapter's digital presence and website.</p>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">📢</div>
+            <h3>Public Relations</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Collaborate with other chapters, handle outreach, and ensure the chapter's news reaches everyone.</p>
+        </div>
+
+        <div class="dash-card" style="flex-direction: column; align-items: flex-start; cursor: default;">
+            <div class="dash-icon-bg">📝</div>
+            <h3>Documentation</h3>
+            <p style="font-size: 14px; margin-top: 10px; color: #666;">Maintain records of all events, write reports, and handle formal correspondence and meeting minutes.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2025 ACM-W Student Chapter | SET MUST</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

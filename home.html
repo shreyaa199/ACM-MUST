@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Dashboard | ACM-W Student Chapter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="dashboard-body">
+
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="logo.png" class="nav-logo" alt="Logo">
+    <span>ACM-W SET MUST</span>
+  </div>
+  <div class="nav-right">
+    <button onclick="logout()" class="logout-btn">
+      <span class="icon">🚪</span> Logout
+    </button>
+  </div>
+</nav>
+
+<section class="hero dashboard-hero">
+  <div class="welcome-container">
+    <h1>Welcome back, <span id="showName" class="highlight-text">Member</span>! 👋</h1>
+    <p class="hero-subtitle">Mody University of Science & Technology Student Chapter</p>
+    
+    <div class="member-info-card">
+      <div class="info-item">
+        <span class="label">USER ID</span>
+        <span id="showUserId" class="value">Loading...</span>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="label">MEMBERSHIP ID</span>
+        <span id="showMembershipId" class="value">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="dash-card card-primary" onclick="window.location.href='membership-card.html'">
+      <div class="dash-icon-bg">🎫</div>
+      <div class="card-text">
+        <h3>Membership Card</h3>
+        <p>View your official ID and download as PDF</p>
+      </div>
+      <span class="arrow-link">→</span>
+    </div>
+
+    <div class="dash-card" onclick="window.location.href='kit.html'">
+      <div class="dash-icon-bg">📄</div>
+      <div class="card-text">
+        <h3>Registration Kit</h3>
+        <p>Access your welcome package and guidelines</p>
+      </div>
+      <span class="arrow-link">→</span>
+    </div>
+
+    <div class="dash-card" onclick="window.location.href='roles.html'">
+      <div class="dash-icon-bg">🧭</div>
+      <div class="card-text">
+        <h3>Roles & Responsibilities</h3>
+        <p>Understand your responsibilities within the team</p>
+      </div>
+      <span class="arrow-link">→</span>
+    </div>
+
+    <div class="dash-card" onclick="window.location.href='terms.html'">
+      <div class="dash-icon-bg">📜</div>
+      <div class="card-text">
+        <h3>Terms & Conditions</h3>
+        <p>Review the chapter rules and code of conduct</p>
+      </div>
+      <span class="arrow-link">→</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 ACM-W Student Chapter | SET MUST</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACM-W Student Chapter | SET MUST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="logo.png" class="nav-logo" alt="ACM-W Logo">
+    <span>ACM-W SET MUST</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#join">Join</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button onclick="openLogin()" class="nav-btn">Member Login</button>
+</nav>
+
+<section class="hero">
+  <h1>Hello, What Do You Want To Explore?</h1>
+  <div class="dropdown-wrapper">
+    <div class="custom-select" id="memberDropdown">
+      <div class="select-header" onclick="toggleDropdown()">
+        <span>Explore Member Resources</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="select-options">
+        <a href="career.html" class="option" style="display: block; text-decoration: none; color: inherit;">📈 Career & Skill Development</a>
+        <a href="networking.html" class="option" style="display: block; text-decoration: none; color: inherit;">🤝 Networking & Community</a>
+        <a href="publications.html" class="option" style="display: block; text-decoration: none; color: inherit;">📖 Publications & Digital Access</a>
+        <a href="events.html" class="option" style="display: block; text-decoration: none; color: inherit;">🏆 Events & Recognition</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-tags">
+    <span>Women in Tech</span>
+    <span>Leadership</span>
+    <span>Innovation</span>
+  </div>
+  <div class="count-box">Active Members: <span id="memberCount">20</span></div>
+</section>
+
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+    <div class="login-header">
+      <img src="logo.png" alt="Logo" style="width: 75px; margin-bottom: 15px;">
+      <h2>Member Login</h2>
+      <p>Access your membership portal</p>
+    </div>
+    <div class="login-form-container">
+      <div class="input-field">
+        <input type="text" id="userid" placeholder="Username" required>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+      <button onclick="login()" class="cta-btn login-submit" style="width: 100%; margin-top: 10px;">Login</button>
+      
+      <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+      
+      <div class="registration-section">
+        <p style="font-size: 13px; color: #333; font-weight: 600; margin-bottom: 10px; text-align: center;">New Member? Register via Email</p>
+        
+        <div class="input-field" style="margin-bottom: 10px;">
+          <input type="email" id="regEmail" placeholder="Enter your Email" required>
+        </div>
+        
+        <button onclick="signUpWithEmail()" class="cta-btn" style="width: 100%; background: #fff; color: #333; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; gap: 10px;">
+          <img src="gmail.png" width="18" alt="G">
+          Quick Register with Email
+        </button>
+      </div>
+
+      <p id="error" class="error-msg" style="color: red; text-align: center; margin-top: 10px;"></p>
+    </div>
+  </div>
+</div>
+
+<div id="regModal" class="modal-overlay" style="z-index: 2000;">
+  <div class="modal-content" style="max-width: 400px;">
+    <div class="login-header">
+      <h2>Complete Your Profile</h2>
+      <p>Finalize your custom credentials</p>
+    </div>
+    <div class="login-form-container">
+      <div class="input-field">
+        <input type="text" id="regFullName" placeholder="Full Name" required>
+      </div>
+      <div class="input-field">
+        <input type="text" id="regPhone" placeholder="Phone Number" required>
+      </div>
+      <div class="input-field">
+        <input type="text" id="regUsername" placeholder="Create Username" required>
+      </div>
+      <div class="input-field">
+        <input type="password" id="regPassword" placeholder="Create Password" required>
+      </div>
+      <button onclick="saveNewUser()" class="cta-btn" style="width: 100%; margin-top: 10px;">Save & Enter Portal</button>
+      <p id="regError" class="error-msg" style="color: red;"></p>
+    </div>
+  </div>
+</div>
+
+<section class="join" id="join">
+  <h2>Become a Member</h2>
+  <p>Join ACM-W to learn, lead, and grow with a community that empowers<br> women in computing.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqblM5sYp6OKgo7PQBYhdFtjyjKW5jnNun8bvldQcVFssSwA/viewform" target="_blank" class="cta-btn">🚀 Apply for Membership</a>
+</section>
+
+<section class="team" id="team">
+  <h2>Our Team</h2>
+  <div class="team-container">
+    <img src="team.jpeg" alt="Our Team" class="team-main-img">
+    <div class="team-btn-area">
+      <a href="team.html" class="cta-btn">Explore the Team</a>
+    </div>
+  </div>
+</section>
+
+<section class="instagram" id="contact">
+  <h2>Get in Touch</h2>
+  <p class="insta-text">Follow our journey and connect with us across platforms.</p>
+  <div class="contact-container">
+    <a href="mailto:acmmust2025@gmail.com" class="contact-link"><span>📧</span> acmmust2025@gmail.com</a>
+    <a href="https://www.linkedin.com/in/acm-w-chapter-must-725b95192" target="_blank" class="contact-link"><span>🔗</span> LinkedIn</a>
+    <a href="https://www.instagram.com/acmw_set_must" target="_blank" class="contact-link"><span>📸</span> @acmw_set_must</a>
+  </div>
+</section>
+
+<footer class="footer"><p>© 2025 ACM-W Student Chapter | SET MUST</p></footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleDropdown() { document.getElementById('memberDropdown').classList.toggle('active'); }
+  function openLogin() { document.getElementById('loginModal').style.display = 'flex'; }
+  function closeLogin() { document.getElementById('loginModal').style.display = 'none'; }
+  
+  window.onclick = function(event) {
+    const loginModal = document.getElementById('loginModal');
+    if (event.target == loginModal) closeLogin();
+    if (!event.target.closest('.custom-select')) document.getElementById('memberDropdown').classList.remove('active');
+  }
+</script>
+</body>
+</html>
+
+
+

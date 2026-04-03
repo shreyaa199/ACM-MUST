@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | ACM-W</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin()">
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="logo.png" class="nav-logo" alt="Logo">
+        <span>Terms & Conditions</span>
+    </div>
+    <button onclick="location.href='home.html'" class="nav-btn">Back</button>
+</nav>
+
+<section class="dashboard-hero">
+    <div class="welcome-container" style="text-align: center;">
+        <h1>📜 Chapter <span class="highlight-text">Policies</span></h1>
+        <p class="hero-subtitle">Guidelines to ensure a professional and ethical environment.</p>
+    </div>
+
+    <div class="dash-card" style="max-width: 800px; margin: 0 auto; flex-direction: column; align-items: flex-start; cursor: default; padding: 40px;">
+        <div class="card-text">
+            <h3 style="color: var(--primary); margin-bottom: 20px;">Membership Terms</h3>
+            <p style="margin-bottom: 15px;">1. Membership is non-transferable and valid for the current academic session.</p>
+            <p style="margin-bottom: 15px;">2. Attendance in at least 75% of mandatory meetings is required to retain active status.</p>
+            <p style="margin-bottom: 15px;">3. Misuse of the ACM-W logo or name for personal projects without permission is strictly prohibited.</p>
+            <p style="margin-bottom: 15px;">4. Any form of intellectual property theft during hackathons will lead to immediate expulsion.</p>
+            <p style="margin-bottom: 15px;">5. Members must maintain respectful and inclusive behavior.</p>
+            <p style="margin-bottom: 15px;">6. The core team reserves the right to modify these terms with prior notice.</p>
+            <p style="margin-bottom: 15px;">7. Members must uphold the reputation of MUST ACM-W.</p>
+            <p style="margin-bottom: 15px;">8. Violation may result in suspension or removal.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2025 ACM-W Student Chapter | SET MUST</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
